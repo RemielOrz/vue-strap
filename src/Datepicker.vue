@@ -7,6 +7,7 @@
       :placeholder="placeholder"
       :style="{width:width}"
       @click="inputClick"
+      :readonly="readonly"
     />
     <button v-if="clearButton&&val" type="button" class="close" @click="val = ''">
       <span>&times;</span>
@@ -85,7 +86,8 @@ export default {
     lang: {type: String, default: navigator.language},
     name: {type: String},
     placeholder: {type: String},
-    iconsFont: {type: String, default: 'glyphicon'}
+    iconsFont: {type: String, default: 'glyphicon'},
+    readonly: {type: Boolean, default: true},
   },
   data () {
     return {
